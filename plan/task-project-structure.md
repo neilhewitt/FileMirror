@@ -16,10 +16,10 @@ FileMirror/
 │   │   ├── Monitoring/          # File system monitoring
 │   │   ├── Mirroring/           # Core mirroring logic
 │   │   └── Storage/             # State persistence
-│   └── FileMirror.Service/      # Windows Service wrapper
-├── tests/
-│   ├── FileMirror.Core.Tests/   # Core logic tests
-│   └── FileMirror.Service.Tests/# Service tests
+│   ├── FileMirror.Service/      # Windows Service wrapper
+│   └── tests/
+│       ├── FileMirror.Core.Tests/   # Core logic tests
+│       └── FileMirror.Service.Tests/# Service tests
 ├── AGENTS.md
 └── AGENTS/
     ├── skill-testing.md
