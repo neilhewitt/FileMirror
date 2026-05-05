@@ -821,8 +821,8 @@
     },
     "FileMirror.Core/1.0.0": {
       "type": "project",
-      "path": "../../src/FileMirror.Core/FileMirror.Core.csproj",
-      "msbuildProject": "../../src/FileMirror.Core/FileMirror.Core.csproj"
+      "path": "../../FileMirror.Core/FileMirror.Core.csproj",
+      "msbuildProject": "../../FileMirror.Core/FileMirror.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -841,11 +841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+      "projectUniqueName": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
       "projectName": "FileMirror.Core.Tests",
-      "projectPath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+      "projectPath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
       "packagesPath": "C:\\Users\\neilh\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\obj\\",
+      "outputPath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

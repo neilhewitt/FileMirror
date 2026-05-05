@@ -10,3 +10,4 @@ C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.dll
 C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\refint\FileMirror.Core.dll
 C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.pdb
 C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\ref\FileMirror.Core.dll
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.sourcelink.json

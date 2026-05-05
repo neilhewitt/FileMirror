@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj": {}
+    "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj": {}
   },
   "projects": {
     "C:\\projects\\FileMirror\\src\\FileMirror.Core\\FileMirror.Core.csproj": {
@@ -357,14 +357,14 @@
         }
       }
     },
-    "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj": {
+    "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+        "projectUniqueName": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
         "projectName": "FileMirror.Core.Tests",
-        "projectPath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+        "projectPath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
         "packagesPath": "C:\\Users\\neilh\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\obj\\",
+        "outputPath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QXdiw/5tw3s=",
+  "dgSpecHash": "KTcIg+BWSQg=",
   "success": true,
-  "projectFilePath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+  "projectFilePath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\neilh\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
     "C:\\Users\\neilh\\.nuget\\packages\\microsoft.net.test.sdk\\17.11.1\\microsoft.net.test.sdk.17.11.1.nupkg.sha512",
@@ -21,9 +21,9 @@
       "code": "NU1603",
       "level": "Warning",
       "message": "FileMirror.Core depends on System.IO.Abstractions (>= 21.0.10) but System.IO.Abstractions 21.0.10 was not found. System.IO.Abstractions 21.0.22 was resolved instead.",
-      "projectPath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+      "projectPath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\projects\\FileMirror\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
+      "filePath": "C:\\projects\\FileMirror\\src\\tests\\FileMirror.Core.Tests\\FileMirror.Core.Tests.csproj",
       "libraryId": "System.IO.Abstractions",
       "targetGraphs": [
         "net10.0"

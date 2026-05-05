@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FileMirror.Core\FileMirror.Core.csproj" />
+    <ProjectReference Include="..\..\FileMirror.Core\FileMirror.Core.csproj" />
   </ItemGroup>
 
 </Project>
