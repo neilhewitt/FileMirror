@@ -1,0 +1,12 @@
+C:\projects\FileMirror\src\FileMirror.Core\bin\Debug\net10.0\FileMirror.Core.deps.json
+C:\projects\FileMirror\src\FileMirror.Core\bin\Debug\net10.0\FileMirror.Core.dll
+C:\projects\FileMirror\src\FileMirror.Core\bin\Debug\net10.0\FileMirror.Core.pdb
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.csproj.AssemblyReference.cache
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.AssemblyInfoInputs.cache
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.AssemblyInfo.cs
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.csproj.CoreCompileInputs.cache
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.dll
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\refint\FileMirror.Core.dll
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\FileMirror.Core.pdb
+C:\projects\FileMirror\src\FileMirror.Core\obj\Debug\net10.0\ref\FileMirror.Core.dll
