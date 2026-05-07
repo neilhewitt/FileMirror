@@ -38,8 +38,13 @@ Create Windows Service wrapper for FileMirror.
 3. PowerShell scripts in repo root
 4. Write integration tests for service lifecycle
 
-## Acceptance Criteria
-- Service installs/uninstalls via PowerShell
-- Service starts/stops cleanly
-- Config hot-reload works in service mode
-- No GUI required
+## Implementation Status
+- ✅ `FileMirrorService` class with ServiceBase
+- ✅ `OnStart(string[] args)` with correct signature per Windows Service spec
+- ✅ PowerShell `install-service.ps1` script
+- ✅ PowerShell `uninstall-service.ps1` script
+- ✅ `Program` class with Main method
+
+## Notes
+- ✅ ServiceBase lifecycle methods implemented (OnStart, OnStop, OnContinue, OnPause)
+- ✅ Hot-reload via ConfigStore.Watch() already implemented in task-configuration

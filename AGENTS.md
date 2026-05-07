@@ -14,6 +14,17 @@
 - Testable design without over-architecting
 - YAGNI - keep it simple
 
+## Coding style
+
+Follow the global AGENTS.md coding standards rigidly. These are non-negotiable and must be enforced:
+
+- **No `var`** (except anonymous types where absolutely required)
+- **Constants use SCREAMING_SNAKE_CASE**
+- **No comments** unless explicitly requested for clarity
+- **Explicit types only**
+
+Failure to follow these rules is a code quality failure that will be caught in code review. Do not deviate without explicit approval.
+
 ## What it does
 
 Mirrors file changes (contents, attributes, names, adds, deletes) one-way from source to target path(s) in real time (<1s latency). Target changes are reverted to match source. No GUI - config-only via JSON file.

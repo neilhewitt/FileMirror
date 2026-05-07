@@ -60,7 +60,7 @@
             },
             "System.IO.Abstractions": {
               "target": "Package",
-              "version": "[21.0.10, )"
+              "version": "[21.0.22, )"
             }
           },
           "imports": [
@@ -416,6 +416,10 @@
               "target": "Package",
               "version": "[10.0.5, )",
               "autoReferenced": true
+            },
+            "System.CommandLine": {
+              "target": "Package",
+              "version": "[2.0.0-beta4.22272.1, )"
             }
           },
           "imports": [

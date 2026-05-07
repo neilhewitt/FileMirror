@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileMirror.Core.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b78cfed78decb706e7297262e8ab6929e332f0eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b529ba27d6524820736c4191529304e08ddd882c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileMirror.Core.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileMirror.Core.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

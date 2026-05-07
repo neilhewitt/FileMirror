@@ -53,3 +53,4 @@ C:\projects\FileMirror\src\FileMirror.Service\obj\Debug\net10.0-windows\refint\F
 C:\projects\FileMirror\src\FileMirror.Service\obj\Debug\net10.0-windows\FileMirror.Service.pdb
 C:\projects\FileMirror\src\FileMirror.Service\obj\Debug\net10.0-windows\FileMirror.Service.genruntimeconfig.cache
 C:\projects\FileMirror\src\FileMirror.Service\obj\Debug\net10.0-windows\ref\FileMirror.Service.dll
+C:\projects\FileMirror\src\FileMirror.Service\obj\Debug\net10.0-windows\FileMirror.Service.sourcelink.json

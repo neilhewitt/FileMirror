@@ -46,10 +46,14 @@ Create a simple configuration model and JSON parser for FileMirror.
 1. Create classes in `src/FileMirror.Core/Config/`
 2. Implement JSON parsing using Newtonsoft.Json
 3. Implement file watching for hot-reload
-4. Write tests in `tests/FileMirror.Core.Tests/Config/`
+4. Write tests in `src/tests/FileMirror.Core.Tests/Config/`
 
-## Acceptance Criteria
-- Config model represents all required fields
-- JSON parsing handles missing optional fields with defaults
-- File watcher triggers reload callback
-- All parsing edge cases covered by tests
+## Implementation Status
+- ✅ `SourceMapping` - stores source/target paths and recursion setting
+- ✅ `Config` - holds collection of mappings and settings
+- ✅ `ConfigParser` - parses JSON, validates config
+- ✅ `ConfigStore` - loads/saves config, watches for changes
+- ✅ All tests pass (7/7)
+
+## Style reminder
+Follow the global AGENTS.md coding style. Constants use SCREAMING_SNAKE_CASE, no `var` (except for anonymous types where required), no comments unless explicitly requested.

@@ -60,7 +60,7 @@
             },
             "System.IO.Abstractions": {
               "target": "Package",
-              "version": "[21.0.10, )"
+              "version": "[21.0.22, )"
             }
           },
           "imports": [

@@ -21,6 +21,60 @@
           }
         }
       },
+      "System.CommandLine/2.0.0-beta4.22272.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net6.0/cs/System.CommandLine.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0/de/System.CommandLine.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/System.CommandLine.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/System.CommandLine.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/System.CommandLine.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/System.CommandLine.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/System.CommandLine.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pl/System.CommandLine.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0/pt-BR/System.CommandLine.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/System.CommandLine.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/tr/System.CommandLine.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0/zh-Hans/System.CommandLine.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/System.CommandLine.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "System.IO.Abstractions/21.0.22": {
         "type": "package",
         "dependencies": {
@@ -72,7 +126,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "System.IO.Abstractions": "21.0.10"
+          "System.IO.Abstractions": "21.0.22"
         },
         "compile": {
           "bin/placeholder/FileMirror.Core.dll": {}
@@ -102,6 +156,60 @@
           }
         }
       },
+      "System.CommandLine/2.0.0-beta4.22272.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net6.0/cs/System.CommandLine.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0/de/System.CommandLine.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/System.CommandLine.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/System.CommandLine.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/System.CommandLine.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/System.CommandLine.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/System.CommandLine.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pl/System.CommandLine.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0/pt-BR/System.CommandLine.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/System.CommandLine.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/tr/System.CommandLine.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0/zh-Hans/System.CommandLine.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/System.CommandLine.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
       "System.IO.Abstractions/21.0.22": {
         "type": "package",
         "dependencies": {
@@ -153,7 +261,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "System.IO.Abstractions": "21.0.10"
+          "System.IO.Abstractions": "21.0.22"
         },
         "compile": {
           "bin/placeholder/FileMirror.Core.dll": {}
@@ -245,6 +353,50 @@
         "packageIcon.png"
       ]
     },
+    "System.CommandLine/2.0.0-beta4.22272.1": {
+      "sha512": "1uqED/q2H0kKoLJ4+hI2iPSBSEdTuhfCYADeJrAqERmiGQ2NNacYKRNEQ+gFbU4glgVyK8rxI+ZOe1onEtr/Pg==",
+      "type": "package",
+      "path": "system.commandline/2.0.0-beta4.22272.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/System.CommandLine.dll",
+        "lib/net6.0/System.CommandLine.pdb",
+        "lib/net6.0/System.CommandLine.xml",
+        "lib/net6.0/cs/System.CommandLine.resources.dll",
+        "lib/net6.0/de/System.CommandLine.resources.dll",
+        "lib/net6.0/es/System.CommandLine.resources.dll",
+        "lib/net6.0/fr/System.CommandLine.resources.dll",
+        "lib/net6.0/it/System.CommandLine.resources.dll",
+        "lib/net6.0/ja/System.CommandLine.resources.dll",
+        "lib/net6.0/ko/System.CommandLine.resources.dll",
+        "lib/net6.0/pl/System.CommandLine.resources.dll",
+        "lib/net6.0/pt-BR/System.CommandLine.resources.dll",
+        "lib/net6.0/ru/System.CommandLine.resources.dll",
+        "lib/net6.0/tr/System.CommandLine.resources.dll",
+        "lib/net6.0/zh-Hans/System.CommandLine.resources.dll",
+        "lib/net6.0/zh-Hant/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/System.CommandLine.dll",
+        "lib/netstandard2.0/System.CommandLine.pdb",
+        "lib/netstandard2.0/System.CommandLine.xml",
+        "lib/netstandard2.0/cs/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/de/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/es/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/fr/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/it/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ja/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ko/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/pl/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/pt-BR/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ru/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/tr/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/zh-Hans/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/zh-Hant/System.CommandLine.resources.dll",
+        "system.commandline.2.0.0-beta4.22272.1.nupkg.sha512",
+        "system.commandline.nuspec"
+      ]
+    },
     "System.IO.Abstractions/21.0.22": {
       "sha512": "DRnFyMIjO1KG9fqUPKV7XDPgECEwrNpsb3OLD0mImViVpRZ5747o7vqrOYbn9AMaQ8eajLeKH0fXQglgH7v42A==",
       "type": "package",
@@ -329,7 +481,8 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "FileMirror.Core >= 1.0.0",
-      "Microsoft.NET.ILLink.Tasks >= 10.0.5"
+      "Microsoft.NET.ILLink.Tasks >= 10.0.5",
+      "System.CommandLine >= 2.0.0-beta4.22272.1"
     ]
   },
   "packageFolders": {
@@ -395,6 +548,10 @@
             "target": "Package",
             "version": "[10.0.5, )",
             "autoReferenced": true
+          },
+          "System.CommandLine": {
+            "target": "Package",
+            "version": "[2.0.0-beta4.22272.1, )"
           }
         },
         "imports": [
@@ -709,18 +866,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "FileMirror.Core depends on System.IO.Abstractions (>= 21.0.10) but System.IO.Abstractions 21.0.10 was not found. System.IO.Abstractions 21.0.22 was resolved instead.",
-      "libraryId": "System.IO.Abstractions",
-      "targetGraphs": [
-        "net10.0",
-        "net10.0/win-x64"
-      ]
-    }
-  ]
+  }
 }

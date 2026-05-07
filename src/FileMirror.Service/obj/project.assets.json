@@ -714,7 +714,7 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
-          "System.IO.Abstractions": "21.0.10"
+          "System.IO.Abstractions": "21.0.22"
         },
         "compile": {
           "bin/placeholder/FileMirror.Core.dll": {}
@@ -2133,17 +2133,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "FileMirror.Core depends on System.IO.Abstractions (>= 21.0.10) but System.IO.Abstractions 21.0.10 was not found. System.IO.Abstractions 21.0.22 was resolved instead.",
-      "libraryId": "System.IO.Abstractions",
-      "targetGraphs": [
-        "net10.0-windows"
-      ]
-    }
-  ]
+  }
 }

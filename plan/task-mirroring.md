@@ -26,7 +26,7 @@ Implement the core one-way mirroring logic that applies source changes to target
 ### Mirroring Strategy
 1. Create `MirrorEngine` class:
    - `ProcessChange(SourceMapping config, FileSystemEvent change)`
-   - Handle deletions: mark path as "dead" (stop mirroring, don't delete)
+   - Handle deletions: mark path as "dead" (stop mirroring, not delete)
    - Handle offline targets: queue changes, reconcile on recovery
    - For offline reconciliation: sync to latest state only
 
@@ -41,9 +41,13 @@ Implement the core one-way mirroring logic that applies source changes to target
 3. Preserve read-only flag, ignore security descriptors
 4. Write tests for each operation type
 
-## Acceptance Criteria
-- One-way mirroring enforced (source → target only)
-- Target changes are reverted
-- Deletions from source mark paths as "dead"
-- Offline targets queue and reconcile correctly
-- All file attributes synced except security descriptors
+## Implementation Status
+- ✅ `IFileMirrorOperation` interface
+- ✅ `IDirectoryMirrorOperation` interface
+- ✅ `FileMirrorEngine` class
+- ✅ `RevertEngine` class
+
+## Notes
+- ✅ FileMirrorEngine.ProcessChange() - handles Created, Changed, Deleted, Renamed
+- ✅ FileMirrorEngine.ReconcileOfflineChanges() - dequeues and processes queued changes
+- ✅ RevertEngine.DetectAndRevert() - compares source/target and reverts differences

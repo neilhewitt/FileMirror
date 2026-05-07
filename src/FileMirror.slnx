@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../plans/testing.md" />
+    <File Path="gemma-4-review.md" />
+    <File Path="minimax-2.7-review.md" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FileMirror.Core.Tests/FileMirror.Core.Tests.csproj" />
+  </Folder>
+  <Project Path="FileMirror.Core/FileMirror.Core.csproj" />
+  <Project Path="FileMirror.Service/FileMirror.Service.csproj" />
+  <Project Path="FileMirror/FileMirror.csproj" />
+</Solution>

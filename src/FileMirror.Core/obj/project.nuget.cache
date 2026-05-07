@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+zWoqzPf2nw=",
+  "dgSpecHash": "cpkRSqujyqg=",
   "success": true,
   "projectFilePath": "C:\\projects\\FileMirror\\src\\FileMirror.Core\\FileMirror.Core.csproj",
   "expectedPackageFiles": [
@@ -9,18 +9,5 @@
     "C:\\Users\\neilh\\.nuget\\packages\\testableio.system.io.abstractions\\21.0.22\\testableio.system.io.abstractions.21.0.22.nupkg.sha512",
     "C:\\Users\\neilh\\.nuget\\packages\\testableio.system.io.abstractions.wrappers\\21.0.22\\testableio.system.io.abstractions.wrappers.21.0.22.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "message": "FileMirror.Core depends on System.IO.Abstractions (>= 21.0.10) but System.IO.Abstractions 21.0.10 was not found. System.IO.Abstractions 21.0.22 was resolved instead.",
-      "projectPath": "C:\\projects\\FileMirror\\src\\FileMirror.Core\\FileMirror.Core.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\projects\\FileMirror\\src\\FileMirror.Core\\FileMirror.Core.csproj",
-      "libraryId": "System.IO.Abstractions",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

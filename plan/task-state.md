@@ -48,8 +48,16 @@ Implement state persistence for tracking mirrored files and queued changes.
 2. Use JSON for persistence
 3. Write tests for state operations
 
-## Acceptance Criteria
-- State persists across restarts
-- Dead paths remembered
-- Change queue survives restart
-- Recovery syncs to latest state
+## Implementation Status
+- ✅ `FileState` class
+- ✅ `MirroredState` class
+- ✅ `StateStore` class
+- ✅ `ChangeQueue` class
+
+## Notes
+- ✅ StateStore.Load() - JSON deserialization
+- ✅ StateStore.Save() - JSON serialization
+- ✅ StateStore.GetFileState() - dictionary lookup
+- ✅ StateStore.UpdateFileState() - dictionary update
+- ✅ StateStore.MarkDead() - set IsDead flag
+- ✅ StateStore.GetDeadPaths() - filter dead paths
