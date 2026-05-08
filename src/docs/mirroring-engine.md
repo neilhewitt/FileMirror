@@ -48,7 +48,6 @@ Main mirroring engine:
 public class FileMirrorEngine
 {
     private readonly ChangeQueue _changeQueue = new();
-    private readonly RevertEngine _revertEngine = new();
 
     public void ProcessChange(SourceMapping mapping, FileSystemEvent change) { ... }
     public void QueueForOffline(FileSystemEvent change) { ... }
@@ -58,28 +57,10 @@ public class FileMirrorEngine
 
 **Properties:**
 - `_changeQueue`: Queue for offline changes
-- `_revertEngine`: Revert engine instance
-
 **Methods:**
 - `ProcessChange()`: Handle source change
 - `QueueForOffline()`: Queue change during offline
 - `ReconcileOfflineChanges()`: Process queued changes
-
-### RevertEngine
-
-Detects and reverts unauthorized target changes:
-
-```csharp
-public class RevertEngine
-{
-    public void DetectAndRevert(FileInfo source, FileInfo target) { ... }
-    public void DetectAndRevert(DirectoryInfo source, DirectoryInfo target) { ... }
-}
-```
-
-**Methods:**
-- `DetectAndRevert(FileInfo, FileInfo)`: Revert file changes
-- `DetectAndRevert(DirectoryInfo, DirectoryInfo)`: Revert directory changes
 
 ## Usage
 
@@ -97,19 +78,11 @@ engine.ProcessChange(mapping, @event);
 
 ```csharp
 FileMirrorEngine engine = new();
-ChangeBatcher batcher = new(TimeSpan.FromMilliseconds(100));
 
 watcher.OnFileChanged += @event =>
 {
-    batcher.AddEvent(@event);
-};
-
-// Process batch
-List<FileSystemEvent> batch = batcher.GetBatch();
-foreach (FileSystemEvent @event in batch)
-{
     engine.ProcessChange(mapping, @event);
-}
+};
 ```
 
 ### Offline Handling
@@ -302,53 +275,6 @@ private void HandleRenamed(string sourcePath, string targetPath, string? oldPath
 
 - Deletes old target
 - Creates new target
-
-## RevertEngine Deep Dive
-
-### Detect and Revert Files
-
-```csharp
-public void DetectAndRevert(FileInfo source, FileInfo target)
-{
-    if (!source.Exists || !target.Exists)
-        return;
-
-    if (source.LastWriteTime != target.LastWriteTime || source.Length != target.Length)
-    {
-        source.CopyTo(target.FullName, true);
-        File.SetAttributes(target.FullName, source.Attributes);
-    }
-    else if (target.Attributes != source.Attributes)
-    {
-        File.SetAttributes(target.FullName, source.Attributes);
-    }
-}
-```
-
-**Checks:**
-
-1. Both files exist
-2. Compare timestamps/size
-3. Compare attributes
-
-**Actions:**
-
-- Copy if content differs
-- Sync attributes if content same but attributes differ
-
-### Detect and Revert Directories
-
-```csharp
-public void DetectAndRevert(DirectoryInfo source, DirectoryInfo target)
-{
-    if (!source.Exists || !target.Exists)
-        return;
-
-    if (source.Attributes != target.Attributes)
-    {
-        Directory.SetLastWriteTime(target.FullName, source.LastWriteTime);
-    }
-}
 ```
 
 **Note:** Only syncs last write time (directories don't have same attributes as files).
@@ -395,7 +321,6 @@ FileMirror ignores:
 ## Thread Safety
 
 - **FileMirrorEngine**: Not thread-safe
-- **RevertEngine**: Not thread-safe
 - **ChangeQueue**: Thread-safe (uses Queue internally)
 
 **Recommendation:** Use single-threaded processing or implement locking.
@@ -430,39 +355,7 @@ public void ProcessChange_Created_FileMirrored()
 }
 ```
 
-### Revert Test
 
-```csharp
-[Test]
-public void RevertEngine_DetectsTargetChanges()
-{
-    // Arrange
-    string sourceDir = Path.Combine(TestBasePath, "source");
-    string targetDir = Path.Combine(TestBasePath, "target");
-    
-    Directory.CreateDirectory(sourceDir);
-    Directory.CreateDirectory(targetDir);
-    
-    string sourceFile = Path.Combine(sourceDir, "file.txt");
-    string targetFile = Path.Combine(targetDir, "file.txt");
-    
-    File.WriteAllText(sourceFile, "source content");
-    File.Copy(sourceFile, targetFile, true);
-    
-    // Unauthorized target change
-    File.WriteAllText(targetFile, "unauthorized content");
-    
-    // Act
-    RevertEngine revertEngine = new();
-    FileInfo sourceInfo = new(sourceFile);
-    FileInfo targetInfo = new(targetFile);
-    
-    revertEngine.DetectAndRevert(sourceInfo, targetInfo);
-    
-    // Assert
-    Assert.That(File.ReadAllText(targetFile), Is.EqualTo("source content"));
-}
-```
 
 ## Troubleshooting
 

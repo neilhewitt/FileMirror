@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "FileMirror.Core/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
-          "System.IO.Abstractions": "21.0.22"
+          "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
           "FileMirror.Core.dll": {}
@@ -20,37 +19,6 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
-          }
-        }
-      },
-      "System.IO.Abstractions/21.0.22": {
-        "dependencies": {
-          "TestableIO.System.IO.Abstractions": "21.0.22",
-          "TestableIO.System.IO.Abstractions.Wrappers": "21.0.22"
-        },
-        "runtime": {
-          "lib/net8.0/System.IO.Abstractions.dll": {
-            "assemblyVersion": "21.0.0.0",
-            "fileVersion": "21.0.22.62509"
-          }
-        }
-      },
-      "TestableIO.System.IO.Abstractions/21.0.22": {
-        "runtime": {
-          "lib/net8.0/TestableIO.System.IO.Abstractions.dll": {
-            "assemblyVersion": "21.0.0.0",
-            "fileVersion": "21.0.22.62509"
-          }
-        }
-      },
-      "TestableIO.System.IO.Abstractions.Wrappers/21.0.22": {
-        "dependencies": {
-          "TestableIO.System.IO.Abstractions": "21.0.22"
-        },
-        "runtime": {
-          "lib/net8.0/TestableIO.System.IO.Abstractions.Wrappers.dll": {
-            "assemblyVersion": "21.0.0.0",
-            "fileVersion": "21.0.22.62509"
           }
         }
       }
@@ -68,27 +36,6 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
-    },
-    "System.IO.Abstractions/21.0.22": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-DRnFyMIjO1KG9fqUPKV7XDPgECEwrNpsb3OLD0mImViVpRZ5747o7vqrOYbn9AMaQ8eajLeKH0fXQglgH7v42A==",
-      "path": "system.io.abstractions/21.0.22",
-      "hashPath": "system.io.abstractions.21.0.22.nupkg.sha512"
-    },
-    "TestableIO.System.IO.Abstractions/21.0.22": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yq3I8rUjNoo4JTOT3jbGfTM5VfowaSYiooDO2bfvQe6XGVyZiSIzaKyCmSnuUEyuktw6zzuVE1lJnUeDhJWtyQ==",
-      "path": "testableio.system.io.abstractions/21.0.22",
-      "hashPath": "testableio.system.io.abstractions.21.0.22.nupkg.sha512"
-    },
-    "TestableIO.System.IO.Abstractions.Wrappers/21.0.22": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ETpw1B6VOsQ5zbfqxqLKjITnMvB9M0K5/bK8qJc6jih+tnlKQmtnnOPSS+OeKCqsZDYeHxPNp4ytQPJS3R+WXA==",
-      "path": "testableio.system.io.abstractions.wrappers/21.0.22",
-      "hashPath": "testableio.system.io.abstractions.wrappers.21.0.22.nupkg.sha512"
     }
   }
 }

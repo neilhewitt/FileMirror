@@ -319,20 +319,6 @@ public static async Task<int> Main(string[] args)
 }
 ```
 
-### CommandLineOptions
-
-Command-line argument model:
-
-```csharp
-public class CommandLineOptions
-{
-    public string ConfigPath { get; set; } = "";
-    public bool Foreground { get; set; }
-    public bool Version { get; set; }
-    public bool Help { get; set; }
-}
-```
-
 ## See Also
 
 - [Windows Service](windows-service.md) - For production deployment

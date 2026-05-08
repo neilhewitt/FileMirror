@@ -56,11 +56,7 @@
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.3, )"
-            },
-            "System.IO.Abstractions": {
-              "target": "Package",
-              "version": "[21.0.22, )"
+              "version": "[13.0.4, )"
             }
           },
           "imports": [

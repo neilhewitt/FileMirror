@@ -200,10 +200,6 @@ engine.ReconcileOfflineChanges(mapping);
    - Duplicate SourceMapping entries
    - Overlapping paths
 
-2. **ChangeBatcher not working**
-   - Events not being batched
-   - Timeout too short
-
 **Solution:**
 ```csharp
 // Check for duplicates

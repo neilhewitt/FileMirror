@@ -70,7 +70,7 @@ Target:      file.txt → "Hello"
 # Someone edits target
 Target:      file.txt → "World"  ← Unauthorized
 
-# RevertEngine detects difference
+# FileMirror reverts to match source
 Target:      file.txt → "Hello"  ← Reverted to match source
 ```
 
@@ -126,24 +126,19 @@ Target:      oldname.txt  (deleted), newname.txt (created)
    ↓
 2. FileSystemWatcherWrapper raises event
    ↓
-3. ChangeBatcher (optional) groups events
+3. FileMirrorEngine.ProcessChange()
    ↓
-4. FileMirrorEngine.ProcessChange()
+4. Calculate target path
    ↓
-5. Calculate target path
+5. Apply operation (copy, delete, etc.)
    ↓
-6. Apply operation (copy, delete, etc.)
-   ↓
-7. StateStore updates tracked state
-   ↓
-8. RevertEngine monitors for unauthorized changes
+6. StateStore updates tracked state
 ```
 
 ## Thread Safety
 
 - **Main thread**: CLI or Service handles configuration
 - **FileSystemWatcher**: Runs on separate threads
-- **ChangeBatcher**: Thread-safe with locking
 - **StateStore**: Not thread-safe (single-threaded access)
 
 For multi-threaded scenarios, consider implementing thread-safe wrappers.

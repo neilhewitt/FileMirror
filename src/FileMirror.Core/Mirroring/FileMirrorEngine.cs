@@ -10,7 +10,6 @@ namespace FileMirror.Core.Mirroring;
 public class FileMirrorEngine
 {
     private readonly ChangeQueue _changeQueue = new();
-    private readonly RevertEngine _revertEngine = new();
 
     public void ProcessChange(SourceMapping mapping, FileSystemEvent change)
     {

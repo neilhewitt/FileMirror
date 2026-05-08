@@ -39,16 +39,12 @@ Detects changes in source directories:
 - **FileSystemWatcherWrapper**: Wraps .NET FileSystemWatcher
 - **FileSystemEvent**: Encapsulates a single change event
 - **FileSystemEventType**: Enum (Changed, Created, Deleted, Renamed, Error)
-- **ChangeBatcher**: Batches rapid changes to reduce redundant operations
 
 ### Mirroring Engine (`FileMirror.Core.Mirroring`)
 
 Applies source changes to targets:
 
 - **FileMirrorEngine**: Main engine, processes events and applies changes
-- **RevertEngine**: Detects and reverts unauthorized target changes
-- **IFileMirrorOperation**: Interface for file operations
-- **IDirectoryMirrorOperation**: Interface for directory operations
 
 ### State Persistence (`FileMirror.Core.Storage`)
 
@@ -65,12 +61,10 @@ Tracks mirrored state and handles offline periods:
 
 1. **FileSystemWatcherWrapper** detects file system changes
 2. Events converted to **FileSystemEvent** objects
-3. **ChangeBatcher** groups events (optional, 100ms timeout)
-4. **FileMirrorEngine** processes each event:
+3. **FileMirrorEngine** processes each event:
    - Calculates target path from source path
    - Applies appropriate operation (copy, delete, etc.)
-5. **StateStore** updates internal state
-6. **RevertEngine** monitors for unauthorized target changes
+4. **StateStore** updates internal state
 
 ### Offline Recovery
 

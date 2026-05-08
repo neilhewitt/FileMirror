@@ -30,9 +30,6 @@ public class SourceMapping
     public string SourcePath { get; set; } = null!;
     public string TargetPath { get; set; } = null!;
     public bool Recursive { get; set; }
-    public bool IsDead { get; private set; }
-
-    public void MarkDead() => IsDead = true;
 }
 ```
 
@@ -40,7 +37,6 @@ public class SourceMapping
 - `SourcePath`: Source directory (required)
 - `TargetPath`: Target directory (required)
 - `Recursive`: Monitor subdirectories (default: true)
-- `IsDead`: Whether path is dead (internal use)
 
 **Constructors:**
 - Parameterless: Default values

@@ -70,29 +70,6 @@ public class FileSystemWatcherWrapper : IDisposable
 - `_recursive`: Monitor subdirectories
 - `_watcher`: Internal FileSystemWatcher
 
-### ChangeBatcher
-
-Batches rapid file system events:
-
-```csharp
-public class ChangeBatcher
-{
-    public ChangeBatcher(TimeSpan timeout) { ... }
-
-    public void AddEvent(FileSystemEvent @event) { ... }
-    public List<FileSystemEvent> GetBatch() { ... }
-}
-```
-
-**Properties:**
-- `_events`: List of queued events
-- `_timeout`: Timeout before auto-flush
-- `_timer`: Timer for timeout
-
-**Methods:**
-- `AddEvent()`: Add event to batch
-- `GetBatch()`: Get and clear batch
-
 ## Usage
 
 ### Basic Setup
@@ -133,20 +110,6 @@ watcher.OnFileChanged += @event =>
             break;
     }
 };
-```
-
-### Change Batching
-
-```csharp
-ChangeBatcher batcher = new(TimeSpan.FromMilliseconds(100));
-
-watcher.OnFileChanged += @event =>
-{
-    batcher.AddEvent(@event);
-};
-
-// Get batch periodically or when timer fires
-List<FileSystemEvent> batch = batcher.GetBatch();
 ```
 
 ### Error Handling
@@ -309,23 +272,6 @@ With batching, these are grouped:
 [Changed, Changed, Changed, Changed, Changed] → Process once
 ```
 
-### Timing
-
-Default timeout: 100ms
-
-```csharp
-ChangeBatcher batcher = new(TimeSpan.FromMilliseconds(100));
-```
-
-### Manual Flush
-
-Get current batch at any time:
-
-```csharp
-List<FileSystemEvent> batch = batcher.GetBatch();
-// Returns all events, clears buffer
-```
-
 ## Network Shares
 
 ### Requirements
@@ -406,14 +352,6 @@ Check:
 3. Event handler subscribed
 4. Network share accessible (if applicable)
 
-### Too Many Events
-
-Solution: Enable batching
-
-```csharp
-ChangeBatcher batcher = new(TimeSpan.FromMilliseconds(100));
-```
-
 ### Access Denied
 
 Solution: Run FileMirror with appropriate permissions
@@ -427,4 +365,4 @@ Error: "The internal buffer is full"
 Solution:
 1. Reduce events (disable some NotifyFilters)
 2. Increase buffer (not directly possible)
-3. Enable batching to reduce processing
+3. Reduce event frequency by filtering (e.g., only Changed events)

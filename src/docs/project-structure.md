@@ -6,10 +6,7 @@
 src/
 ├── FileMirror/                      # Main CLI application
 │   ├── Program.cs                  # Entry point, CLI parsing
-│   └── CommandLineOptions.cs       # Command-line argument model
-│
-├── FileMirror.Core/                # Core domain logic
-│   ├── Config/                     # Configuration system
+│   │   ├── Config/                     # Configuration system
 │   │   ├── Config.cs               # Main configuration object
 │   │   ├── ConfigParser.cs         # JSON parsing and validation
 │   │   ├── ConfigStore.cs          # Load/save config, hot-reload
@@ -18,14 +15,10 @@ src/
 │   ├── Monitoring/                 # File system monitoring
 │   │   ├── FileSystemWatcherWrapper.cs  # FileSystemWatcher wrapper
 │   │   ├── FileSystemEvent.cs      # Change event encapsulation
-│   │   ├── FileSystemEventType.cs  # Event type enum
-│   │   └── ChangeBatcher.cs        # Change batching logic
+│   │   └── FileSystemEventType.cs  # Event type enum
 │   │
 │   ├── Mirroring/                  # Core mirroring logic
 │   │   ├── FileMirrorEngine.cs     # Main mirroring engine
-│   │   ├── RevertEngine.cs         # Revert unauthorized changes
-│   │   ├── IFileMirrorOperation.cs   # File operation interface
-│   │   └── IDirectoryMirrorOperation.cs  # Directory operation interface
 │   │
 │   └── Storage/                    # State persistence
 │       ├── FileState.cs            # Individual file state
@@ -44,15 +37,14 @@ src/
 │       │   ├── ConfigParserTests.cs
 │       │   └── ConfigStoreTests.cs
 │       ├── Monitoring/             # Monitoring tests
-│       │   ├── FileSystemWatcherWrapperTests.cs
-│       │   └── ChangeBatcherTests.cs
+│       │   └── FileSystemWatcherWrapperTests.cs
 │       └── Storage/                # Storage tests
 │           ├── StateStoreTests.cs
 │           └── ChangeQueueTests.cs
 │
 ├── docs/                           # This documentation
 ├── plans/                          # Implementation plans (internal)
-└── skills/                         # Domain skills and guides
+└── plans/                          # Implementation plans (internal)
 ```
 
 ## Project Dependencies

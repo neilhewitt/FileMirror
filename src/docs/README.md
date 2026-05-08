@@ -9,10 +9,10 @@ Welcome to FileMirror - a one-way real-time file mirroring tool.
 cd src && dotnet build -c Release && dotnet publish -c Release --self-contained true /p:PublishSingleFile=true
 
 # 2. Create config
-echo '{"sourceMappings":[{"sourcePath":"C:\\source","targetPath":"C:\\target"}]}' > config.json
+dotnet run -- --scaffold
 
 # 3. Run
-./FileMirror --config config.json --foreground
+./FileMirror --foreground
 ```
 
 📖 **Detailed Guides:**
@@ -25,15 +25,15 @@ echo '{"sourceMappings":[{"sourcePath":"C:\\source","targetPath":"C:\\target"}]}
 | Topic | Description | File |
 |-------|-------------|------|
 | **Mirroring Behavior** | One-way, real-time sync | [How It Works](how-it-works.md) |
-| **Configuration** | JSON config format | [Configuration](configuration.md) |
+| **Configuration** | INI config format with hot-reload | [Configuration](configuration.md) |
 | **State Management** | Persistence and recovery | [State Management](state-management.md) |
 
 ## 🧩 Components
 
 | Component | Purpose | File |
 |-----------|---------|------|
-| **Config System** | JSON parsing, validation, hot-reload | [Config System](config-system.md) |
-| **File Monitor** | FileSystemWatcher wrapper with batching | [File System Monitor](file-system-monitor.md) |
+| **Config System** | INI parsing, validation, hot-reload | [Config System](config-system.md) |
+| **File Monitor** | FileSystemWatcher wrapper | [File System Monitor](file-system-monitor.md) |
 | **Mirroring Engine** | Apply source changes to target | [Mirroring Engine](mirroring-engine.md) |
 | **State Persistence** | Track files, handle offline | [State Persistence](state-persistence.md) |
 

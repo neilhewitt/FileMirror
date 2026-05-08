@@ -15,8 +15,7 @@ src/
         │   ├── ConfigParserTests.cs
         │   └── ConfigStoreTests.cs
         ├── Monitoring/           # Monitoring tests
-        │   ├── FileSystemWatcherWrapperTests.cs
-        │   └── ChangeBatcherTests.cs
+        │   └── FileSystemWatcherWrapperTests.cs
         └── Storage/              # Storage tests
             ├── StateStoreTests.cs
             └── ChangeQueueTests.cs

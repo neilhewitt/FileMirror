@@ -14,7 +14,7 @@ FileMirror follows the global OpenCode AGENTS.md coding standards with project-s
 | Interfaces | `I` + PascalCase | `IFileMirrorOperation`, `IDirectoryMirrorOperation` |
 | Enums | PascalCase | `FileSystemEventType`, ` FileMode` |
 | Private fields | `_camelCase` | `_watcher`, `_changeQueue` |
-| Public properties | PascalCase | `SourcePath`, `IsDead` |
+| Public properties | PascalCase | `SourcePath`, `TargetPath` |
 | Public methods | PascalCase | `ProcessChange()`, `Validate()` |
 | Constants | SCREAMING_SNAKE_CASE | `VERSION`, `DEFAULT_TIMEOUT` |
 
@@ -82,19 +82,14 @@ public class FileMirrorEngine
 {
     // 1. Static consts (top)
     public const string DEFAULT_CONFIG_NAME = "config.json";
-    public static readonly TimeSpan DEFAULT_BATCH_TIMEOUT = TimeSpan.FromMilliseconds(100);
 
     // 2. Instance fields
     private readonly ChangeQueue _changeQueue = new();
-    private readonly RevertEngine _revertEngine = new();
 
-    // 3. Properties
-    public TimeSpan BatchTimeout { get; set; }
-
-    // 4. Public methods
+    // 3. Public methods
     public void ProcessChange(SourceMapping mapping, FileSystemEvent change) { }
 
-    // 5. Internal methods
+    // 4. Internal methods
     internal void HandleCreated(string sourcePath, string targetPath) { }
 
     // 6. Private methods
@@ -266,7 +261,6 @@ For immutable fields:
 public class FileMirrorEngine
 {
     private readonly ChangeQueue _changeQueue = new();
-    private readonly RevertEngine _revertEngine = new();
 
     public FileMirrorEngine()
     {

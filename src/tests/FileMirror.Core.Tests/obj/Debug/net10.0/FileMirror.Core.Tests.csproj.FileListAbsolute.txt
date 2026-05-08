@@ -99,8 +99,5 @@ C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\obj\Debug\net10.0\FileMir
 C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\obj\Debug\net10.0\FileMirror.Core.Tests.genruntimeconfig.cache
 C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\obj\Debug\net10.0\ref\FileMirror.Core.Tests.dll
 C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\.msCoverageSourceRootsMapping_FileMirror.Core.Tests
-C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\System.IO.Abstractions.dll
-C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\TestableIO.System.IO.Abstractions.dll
-C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\TestableIO.System.IO.Abstractions.Wrappers.dll
 C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\FileMirror.Core.dll
 C:\projects\FileMirror\src\tests\FileMirror.Core.Tests\bin\Debug\net10.0\FileMirror.Core.pdb

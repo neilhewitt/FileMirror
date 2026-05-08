@@ -16,13 +16,20 @@ if ($service) {
 }
 
 try {
-    New-Service -Name $ServiceName -BinaryPathName $BinaryPath -DisplayName "FileMirror" -StartupType Automatic
-
+    $binaryPathEscaped = $BinaryPath -replace '\\', '\\'
     if ($ConfigPath) {
-        # TODO: Store config path in registry or config file
+        $configPathEscaped = $ConfigPath -replace '\\', '\\'
+        $binaryPathWithArgs = "`"{0}`" `"{1}`"" -f $binaryPathEscaped, $configPathEscaped
+        New-Service -Name $ServiceName -BinaryPathName $binaryPathWithArgs -DisplayName "FileMirror" -StartupType Automatic
+    }
+    else {
+        New-Service -Name $ServiceName -BinaryPathName $binaryPathEscaped -DisplayName "FileMirror" -StartupType Automatic
     }
 
     Write-Host "FileMirror service installed successfully."
+    if ($ConfigPath) {
+        Write-Host "Config path: $ConfigPath"
+    }
 }
 catch {
     Write-Error "Failed to install service: $_"

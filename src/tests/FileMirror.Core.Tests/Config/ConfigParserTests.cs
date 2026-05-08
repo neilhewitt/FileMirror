@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using FileMirror.Core.Config;
+using FileMirror.Core.Storage;
 using NUnit.Framework;
 
 namespace FileMirror.Core.Tests.Config;
@@ -8,65 +10,88 @@ namespace FileMirror.Core.Tests.Config;
 [TestFixture]
 public class ConfigParserTests
 {
-    private FileMirror.Core.Config.ConfigParser _parser = null!;
-
-    [SetUp]
-    public void Setup()
-    {
-        _parser = new FileMirror.Core.Config.ConfigParser();
-    }
-
     [Test]
-    public void Parse_MinimalConfig_CreatesDefaultConfig()
+    public void Load_MinimalConfig_CreatesDefaultConfig()
     {
-        string json = @"{ ""sourceMappings"": [] }";
-        FileMirror.Core.Config.Config config = _parser.Parse(json);
+        string configPath = Path.Combine(Path.GetTempPath(), $"FileMirrorTest_{Guid.NewGuid():N}.ini");
+        string iniContent = @";
+[config]
+";
+        File.WriteAllText(configPath, iniContent);
+
+        FileMirror.Core.Config.ConfigStore store = new();
+        FileMirror.Core.Config.Config config = store.Load(configPath);
 
         Assert.That(config.SourceMappings.Count, Is.EqualTo(0));
         Assert.That(config.ReloadInterval, Is.EqualTo(TimeSpan.FromSeconds(5)));
         Assert.That(config.BatchChanges, Is.True);
+
+        File.Delete(configPath);
     }
 
     [Test]
-    public void Parse_FullConfig_ParsesAllFields()
+    public void Load_FullConfig_ParsesAllFields()
     {
-        string json = @"{
-            ""sourceMappings"": [
-                {
-                    ""sourcePath"": ""C:\\source"",
-                    ""targetPath"": ""C:\\target"",
-                    ""recursive"": false
-                }
-            ],
-            ""reloadInterval"": ""00:00:10"",
-            ""batchChanges"": false
-        }";
+        string configPath = Path.Combine(Path.GetTempPath(), $"FileMirrorTest_{Guid.NewGuid():N}.ini");
+        string sourcePath = Path.Combine(Path.GetTempPath(), "FileMirrorTestSource");
+        string targetPath = Path.Combine(Path.GetTempPath(), "FileMirrorTestTarget");
 
-        FileMirror.Core.Config.Config config = _parser.Parse(json);
+        string iniContent = $@"
+[config]
+reloadInterval = 00:00:10
+batchChanges = false
+
+[mapping[0]]
+sourcePath = {sourcePath}
+targetPath = {targetPath}
+recursive = false
+";
+
+        File.WriteAllText(configPath, iniContent);
+
+        FileMirror.Core.Config.ConfigStore store = new();
+        FileMirror.Core.Config.Config config = store.Load(configPath);
 
         Assert.That(config.SourceMappings.Count, Is.EqualTo(1));
-        Assert.That(config.SourceMappings[0].SourcePath, Is.EqualTo("C:\\source"));
-        Assert.That(config.SourceMappings[0].TargetPath, Is.EqualTo("C:\\target"));
+        Assert.That(config.SourceMappings[0].SourcePath, Is.EqualTo(sourcePath));
+        Assert.That(config.SourceMappings[0].TargetPath, Is.EqualTo(targetPath));
         Assert.That(config.SourceMappings[0].Recursive, Is.False);
         Assert.That(config.ReloadInterval, Is.EqualTo(TimeSpan.FromSeconds(10)));
         Assert.That(config.BatchChanges, Is.False);
+
+        File.Delete(configPath);
     }
 
     [Test]
-    public void Parse_MultipleMappings_ParsesAll()
+    public void Load_MultipleMappings_ParsesAll()
     {
-        string json = @"{
-            ""sourceMappings"": [
-                { ""sourcePath"": ""C:\\a"", ""targetPath"": ""C:\\b"" },
-                { ""sourcePath"": ""C:\\c"", ""targetPath"": ""C:\\d"", ""recursive"": false }
-            ]
-        }";
+        string configPath = Path.Combine(Path.GetTempPath(), $"FileMirrorTest_{Guid.NewGuid():N}.ini");
+        string sourcePath1 = Path.Combine(Path.GetTempPath(), "FileMirrorTestA");
+        string targetPath1 = Path.Combine(Path.GetTempPath(), "FileMirrorTestB");
+        string sourcePath2 = Path.Combine(Path.GetTempPath(), "FileMirrorTestC");
+        string targetPath2 = Path.Combine(Path.GetTempPath(), "FileMirrorTestD");
 
-        FileMirror.Core.Config.Config config = _parser.Parse(json);
+        string iniContent = $@"
+[mapping[0]]
+sourcePath = {sourcePath1}
+targetPath = {targetPath1}
+
+[mapping[1]]
+sourcePath = {sourcePath2}
+targetPath = {targetPath2}
+recursive = false
+";
+
+        File.WriteAllText(configPath, iniContent);
+
+        FileMirror.Core.Config.ConfigStore store = new();
+        FileMirror.Core.Config.Config config = store.Load(configPath);
 
         Assert.That(config.SourceMappings.Count, Is.EqualTo(2));
         Assert.That(config.SourceMappings[0].Recursive, Is.True);
         Assert.That(config.SourceMappings[1].Recursive, Is.False);
+
+        File.Delete(configPath);
     }
 
     [Test]
@@ -74,7 +99,8 @@ public class ConfigParserTests
     {
         FileMirror.Core.Config.Config config = new();
 
-        List<string> errors = _parser.Validate(config);
+        FileMirror.Core.Config.ConfigParser parser = new();
+        List<string> errors = parser.Validate(config);
 
         Assert.That(errors.Count, Is.GreaterThan(0));
     }
@@ -83,9 +109,12 @@ public class ConfigParserTests
     public void Validate_ValidConfig_ReturnsEmpty()
     {
         FileMirror.Core.Config.Config config = new();
-        config.SourceMappings.Add(new FileMirror.Core.Config.SourceMapping("C:\\source", "C:\\target"));
+        string sourcePath = Path.Combine(Path.GetTempPath(), "FileMirrorTestSource");
+        string targetPath = Path.Combine(Path.GetTempPath(), "FileMirrorTestTarget");
+        config.SourceMappings.Add(new FileMirror.Core.Config.SourceMapping(sourcePath, targetPath));
 
-        List<string> errors = _parser.Validate(config);
+        FileMirror.Core.Config.ConfigParser parser = new();
+        List<string> errors = parser.Validate(config);
 
         Assert.That(errors.Count, Is.EqualTo(0));
     }

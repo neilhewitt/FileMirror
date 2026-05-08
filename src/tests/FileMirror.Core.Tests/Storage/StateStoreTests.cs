@@ -41,20 +41,20 @@ public class StateStoreTests : TestBase
     {
         FileState fileState = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal,
             IsDead = false
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState);
         _store.Save();
 
         StateStore store2 = new(StatePath);
         MirroredState loadedState = store2.Load();
 
         Assert.That(loadedState.Files.Count, Is.EqualTo(1));
-        Assert.That(loadedState.Files.ContainsKey("C:\\source\\test.txt"));
+        Assert.That(loadedState.Files.ContainsKey(SourcePath + "\\test.txt"));
     }
 
     [Test]
@@ -68,25 +68,25 @@ public class StateStoreTests : TestBase
     [Test]
     public void GetFileState_FoundReturnsState()
     {
-        FileState fileState = new()
+      FileState fileState = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState);
 
-        FileState? result = _store.GetFileState("C:\\source\\test.txt");
+        FileState? result = _store.GetFileState(SourcePath + "\\test.txt");
 
         Assert.That(result, Is.Not.Null);
-        Assert.That(result!.Path, Is.EqualTo("C:\\source\\test.txt"));
+        Assert.That(result!.Path, Is.EqualTo(SourcePath + "\\test.txt"));
     }
 
     [Test]
     public void GetFileState_NotFoundReturnsNull()
     {
-        FileState? result = _store.GetFileState("C:\\source\\nonexistent.txt");
+        FileState? result = _store.GetFileState(SourcePath + "\\nonexistent.txt");
 
         Assert.That(result, Is.Null);
     }
@@ -94,16 +94,16 @@ public class StateStoreTests : TestBase
     [Test]
     public void UpdateFileState_AddsNewFile()
     {
-        FileState fileState = new()
+     FileState fileState = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState);
 
-        FileState? result = _store.GetFileState("C:\\source\\test.txt");
+        FileState? result = _store.GetFileState(SourcePath + "\\test.txt");
 
         Assert.That(result, Is.Not.Null);
     }
@@ -113,23 +113,23 @@ public class StateStoreTests : TestBase
     {
         FileState fileState1 = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now.AddMinutes(-1),
             Length = 100,
             Attributes = FileAttributes.Normal
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState1);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState1);
 
         FileState fileState2 = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now,
             Length = 200,
             Attributes = FileAttributes.Archive
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState2);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState2);
 
-        FileState? result = _store.GetFileState("C:\\source\\test.txt");
+        FileState? result = _store.GetFileState(SourcePath + "\\test.txt");
 
         Assert.That(result!.Length, Is.EqualTo(200));
     }
@@ -139,16 +139,16 @@ public class StateStoreTests : TestBase
     {
         FileState fileState = new()
         {
-            Path = "C:\\source\\test.txt",
+            Path = SourcePath + "\\test.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal
         };
-        _store.UpdateFileState("C:\\source\\test.txt", fileState);
+        _store.UpdateFileState(SourcePath + "\\test.txt", fileState);
 
-        _store.MarkDead("C:\\source\\test.txt");
+        _store.MarkDead(SourcePath + "\\test.txt");
 
-        FileState? result = _store.GetFileState("C:\\source\\test.txt");
+        FileState? result = _store.GetFileState(SourcePath + "\\test.txt");
 
         Assert.That(result!.IsDead, Is.True);
     }
@@ -158,26 +158,26 @@ public class StateStoreTests : TestBase
     {
         FileState fileState1 = new()
         {
-            Path = "C:\\source\\dead.txt",
+            Path = SourcePath + "\\dead.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal,
             IsDead = true
         };
-        _store.UpdateFileState("C:\\source\\dead.txt", fileState1);
+        _store.UpdateFileState(SourcePath + "\\dead.txt", fileState1);
 
         FileState fileState2 = new()
         {
-            Path = "C:\\source\\alive.txt",
+            Path = SourcePath + "\\alive.txt",
             LastModified = DateTime.Now,
             Length = 100,
             Attributes = FileAttributes.Normal
         };
-        _store.UpdateFileState("C:\\source\\alive.txt", fileState2);
+        _store.UpdateFileState(SourcePath + "\\alive.txt", fileState2);
 
         List<string> deadPaths = _store.GetDeadPaths();
 
         Assert.That(deadPaths.Count, Is.EqualTo(1));
-        Assert.That(deadPaths[0], Is.EqualTo("C:\\source\\dead.txt"));
+        Assert.That(deadPaths[0], Is.EqualTo(SourcePath + "\\dead.txt"));
     }
 }

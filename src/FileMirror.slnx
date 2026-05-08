@@ -3,6 +3,7 @@
     <File Path="../plans/testing.md" />
     <File Path="gemma-4-review.md" />
     <File Path="minimax-2.7-review.md" />
+    <File Path="vision.md" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/FileMirror.Core.Tests/FileMirror.Core.Tests.csproj" />

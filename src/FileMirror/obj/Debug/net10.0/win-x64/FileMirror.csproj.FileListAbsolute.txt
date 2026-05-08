@@ -9,9 +9,6 @@ C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\FileMirror.runti
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\FileMirror.dll
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\FileMirror.pdb
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\Newtonsoft.Json.dll
-C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\System.IO.Abstractions.dll
-C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\TestableIO.System.IO.Abstractions.dll
-C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\TestableIO.System.IO.Abstractions.Wrappers.dll
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\Microsoft.CSharp.dll
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\Microsoft.VisualBasic.Core.dll
 C:\projects\FileMirror\src\FileMirror\bin\Debug\net10.0\win-x64\Microsoft.VisualBasic.dll
